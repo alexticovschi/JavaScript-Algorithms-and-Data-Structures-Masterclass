@@ -9,8 +9,6 @@
 /***    MY SOLUTION    ***/ 
 /*************************/
 function validAnagram(str1, str2) {
-    if(str1.length !== str2.length) return false;
-
     let freqCount1 = {},
         freqCount2 = {};
     
@@ -20,7 +18,7 @@ function validAnagram(str1, str2) {
     for(let val of str2) {
         freqCount2[val] = (freqCount2[val] || 0) + 1;
     }
-    
+
     for(let key in freqCount1) {
         if(freqCount1[key] !== freqCount2[key]) {
             return false;
