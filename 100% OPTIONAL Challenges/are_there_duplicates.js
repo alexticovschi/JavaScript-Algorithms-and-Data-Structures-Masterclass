@@ -16,6 +16,8 @@
 //     Time - O(N LOG N)  
 //     Space - O(1)
 
+
+// Using Frequency Counter Pattern
 function areThereDuplicates(...args) {
     let obj = {};
 
@@ -27,5 +29,24 @@ function areThereDuplicates(...args) {
         if(obj[key] !== 1) return true;
     }
     
+    return false;
+}
+
+
+// Using Multiple Pointers Pattern
+function areThereDuplicates(...args) {
+    // Two pointers
+    args.sort((a,b) => a - b);
+    let start = 0;
+    let next = 1;
+
+    while(next < args.length) {
+        if(args[start] === args[next]) {
+            return true;
+        }
+        start++;
+        next++
+    }
+
     return false;
 }
