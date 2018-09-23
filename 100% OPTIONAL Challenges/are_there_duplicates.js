@@ -50,3 +50,8 @@ function areThereDuplicates(...args) {
 
     return false;
 }
+
+// Using Set
+function areThereDuplicates() {
+    return new Set(arguments).size !== arguments.length;
+}
